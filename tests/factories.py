@@ -55,10 +55,3 @@ class ProductFactory(factory.Factory):
         ["UNKNOWN", "CLOTHS", "FOOD", "HOUSEWARES", "AUTOMOTIVE", "TOOLS"]
     )
 
-    @classmethod
-    def create(cls, **kwargs):
-        """Create and persist a product to the database"""
-        product = cls.build(**kwargs)
-        db.session.add(product)
-        db.session.commit()
-        return product
